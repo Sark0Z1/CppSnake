@@ -2,7 +2,6 @@
 
 
 #include "CppSnake/Core/Game.h"
-
 #include "Grid.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogGame, All, All);

@@ -17,9 +17,9 @@ Grid::Grid(const Dimension& dim) : c_dim(Dimension{dim.width + 2, dim.width + 2}
 
 void Grid::InitWalls()
 {
-	for (int32 y = 0; y < c_dim.heith; y++)
+	for (int32 y = 0; y < c_dim.heith; ++y)
 	{
-		for (int32 x = 0; x < c_dim.width; x++)
+		for (int32 x = 0; x < c_dim.width; ++x)
 		{
 			if (x == 0 || x == c_dim.width - 1 || y == 0 || y == c_dim.heith - 1)
 			{
@@ -32,12 +32,12 @@ void Grid::InitWalls()
 void Grid::PrintDebug()
 {
 #if !UE_BUILD_SHIPPING
-	for (int32 y = 0; y < c_dim.heith; y++)
+	for (int32 y = 0; y < c_dim.heith; ++y)
 	{
 		FString line;
-		for (int32 x = 0; x < c_dim.width; x++)
+		for (int32 x = 0; x < c_dim.width; ++x)
 		{
-			TCHAR symbol;
+			TCHAR symbol{};
 			switch (m_cells[PositionIndex(x, y)])
 			{
 			case CellType::Empty: symbol = '0';
